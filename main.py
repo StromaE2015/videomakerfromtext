@@ -29,10 +29,25 @@ cookies = sign.login(cookie_dir_path=cookie_path_dir, save_cookies=True)
 # Create your ChatBot
 chatbot = hugchat.ChatBot(cookies=cookies.get_dict())  # or cookie_path="usercookies/<email>.json"
 
-# استبدال الاعدادات القديمة بالجديدة
-replace_words_in_file(newconfigfile, replacements)
-# استيراد الاعدادات من الملف
-text = read_text_from_file(newconfigfile)
+
+
+
+oldconfigfile = "/content/videomakerfromtext/oldconfig.txt"
+newconfigfile = "/content/videomakerfromtext/newconfig.txt"
+replacements = {
+    "title": title,
+    "tobic": tobic,
+    "time": VideoTime,
+    "language": VideoLanguage
+}
+replace_words_in_file(oldconfigfile, replacements)
+
+# قراءة نص من ملف نصي
+file_path = "newconfigfile"
+text = read_text_from_file(file_path)
+if text:
+    # قم بمعالجة النص أو استخدامه حسب الحاجة
+    print(text)
 # مراسلة chat gpt
  query_result = chatbot.chat(text)
 # طباعة الرد من chat gpt
