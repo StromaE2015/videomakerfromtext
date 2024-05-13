@@ -26,14 +26,14 @@ cookies = sign.login(cookie_dir_path=cookie_path_dir, save_cookies=True)
 chatbot = hugchat.ChatBot(cookies=cookies.get_dict())  # or cookie_path="usercookies/<email>.json"
 
 
-def replace_words_in_file(file_path, replacements):
+def replace_words_in_file(file_path, replacements, title):
     """
     استبدال كلمات متعددة في ملف نصي.
 
     :param file_path: مسار الملف النصي.
     :param replacements: قاموس يحتوي على الكلمات القديمة كالمفاتيح والكلمات الجديدة كالقيم.
     """
-    try:
+
         # فتح الملف في وضع القراءة
         with open(oldconfigfile, 'r', encoding='utf-8') as file:
             content = file.read()
@@ -51,7 +51,7 @@ def replace_words_in_file(file_path, replacements):
     except FileNotFoundError:
         print(f"الملف '{file_path}' غير موجود.")
 
-    except UnicodeDecodeError:
+
         print(f"حدث خطأ في فك تشفير الملف '{file_path}'.")
 
 
@@ -63,7 +63,7 @@ def read_text_from_file(file_path):
     :param file_path: مسار الملف النصي.
     :return: النص الموجود في الملف.
     """
-    try:
+
         # فتح الملف في وضع القراءة
         with open(file_path, 'r', encoding='utf-8') as file:
             # قراءة محتويات الملف
@@ -72,11 +72,11 @@ def read_text_from_file(file_path):
     except FileNotFoundError:
         print(f"الملف '{file_path}' غير موجود.")
         return None
-    except UnicodeDecodeError:
+
         print(f"حدث خطأ في فك تشفير الملف '{file_path}'.")
         return None
 
-try:
+
     oldconfigfile = "/content/videomakerfromtext/oldconfig.txt"
     newconfigfile = "/content/videomakerfromtext/newconfig.txt"
     replacements = {
@@ -92,8 +92,7 @@ try:
     text = read_text_from_file(file_path)
     query_result = chatbot.chat(text)
     print(query_result)
-except Exception as e:
-    print(f"حدث خطأ: {e}")
+
 
 
 
