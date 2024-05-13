@@ -12,6 +12,7 @@ from pyttsx3 import init
 from pydub import AudioSegment
 from pydub.playback import play
 import sys
+from functions import replace_words_in_file, read_text_from_file
 
 
 # @title Default title text
