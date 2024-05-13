@@ -107,8 +107,8 @@ file_path_video = os.path.join(current_directory, "video_lines.txt")
 file_path_text = os.path.join(current_directory, "text_lines.txt")
 
 # قراءة النص من الملف
-oldconfigfile = "/content/videomakerfromtext/oldconfig.txt"
-newconfigfile = "/content/videomakerfromtext/newconfig.txt"
+oldconfigfile = current_directory,"oldconfig.txt"
+newconfigfile = current_directory,"newconfig.txt"
 
 replacements = {
     "title": title,
