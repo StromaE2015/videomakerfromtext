@@ -33,25 +33,7 @@ chatbot = hugchat.ChatBot(cookies=cookies.get_dict())  # or cookie_path="usercoo
 
 replace_words_in_file(newconfigfile, replacements)
 
-def read_text_from_file(file_path):
-    """
-    قراءة نص من ملف نصي.
 
-    :param file_path: مسار الملف النصي.
-    :return: النص الموجود في الملف.
-    """
-    try:
-        # فتح الملف في وضع القراءة
-        with open(file_path, 'r', encoding='utf-8') as file:
-            # قراءة محتويات الملف
-            text = file.read()
-        return text
-    except FileNotFoundError:
-        print(f"الملف '{file_path}' غير موجود.")
-        return None
-    except UnicodeDecodeError:
-        print(f"حدث خطأ في فك تشفير الملف '{file_path}'.")
-        return None
 
 # مثال على الاستخدام
 file_path = newconfigfile
