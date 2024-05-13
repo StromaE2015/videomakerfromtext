@@ -1,5 +1,4 @@
 
-!pip install hugchat pillow opencv-python moviepy pyttsx3 pydub tk
 
 from hugchat import hugchat
 from hugchat.login import Login
