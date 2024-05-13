@@ -27,14 +27,7 @@ def replace_words_in_file(file_path, replacements):
         print(f"حدث خطأ في فك تشفير الملف '{file_path}'.")
 
 # مثال على الاستخدام
-oldconfigfile = "/content/videomakerfromtext/oldconfig.txt"
-newconfigfile = "/content/videomakerfromtext/newconfig.txt"
-replacements = {
-    "title": title,
-    "tobic": tobic,
-    "time": VideoTime,
-    "language": VideoLanguage
-}
+
 
 def read_text_from_file(file_path):
     """
